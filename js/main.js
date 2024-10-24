@@ -1,6 +1,13 @@
 (function ($) {
     "use strict";
 
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+
+    const name = params.to;
+    document.getElementsByClassName('guest-name')[0].innerHTML = name;
+
     // Navbar on scrolling
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
@@ -27,12 +34,9 @@
         }
     });
 
-
-    // Modal Video
-    $(document).ready(function () {
-        document.getElementsByClassName('song')[0].play();
-    });
-
+    // $(document).ready(function () {
+    //     disable()
+    // });
 
     // Scroll to Bottom
     $(window).scroll(function () {
@@ -69,6 +73,19 @@
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    // Cover
+    $('.cover-btn').click(function () {
+        document.getElementsByClassName('song')[0].play();
+        const cover = document.getElementsByClassName('cover')[0]
+        cover.setAttribute('class', 'cover-btn-active');
+        document.body.style.overflowY = 'visible';
+        sleep(400).then(() => {cover.style.display = 'none';});
+    })
 
 
     // Gallery carousel

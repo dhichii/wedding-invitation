@@ -24,10 +24,27 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <audio class="song" src="./audio/song.mp3" controls autoplay loop style="display: none;">
+<body data-target=".navbar" data-offset="51" style="overflow-y: hidden;">
+    <audio class="song" src="./audio/song.mp3" controls loop style="display: none;">
         Your browser isn't supported for this Audio!!.
     </audio>
+
+
+    <!-- Cover Start -->
+    <div class="cover position-absolute bg-white" style="height: 100vh; width: 100%; z-index: 999; overflow: hidden; transition: all 0.5s ease;">
+        <div class="container p-0">
+            <div style="height: 100vh; max-width: 540px; background: url(./img/cover.jpeg) center center no-repeat; background-size: auto 100vh; margin-left: auto; margin-right: auto;">
+                <div class="position-absolute" style="top: 75%; left: 0; right: 0;">
+                    <p class="text-primary" style="left: 0; right: 0; width: fit-content; margin-inline: auto;">Kepada Yth:</p>
+                    <h5 class="guest-name text-primary" style="left: 0; right: 0; width: fit-content; margin-inline: auto; margin-bottom: 30px;"></h5>
+                    <button class="cover-btn btn btn-secondary position-absolute" style="left: 0; right: 0; width: fit-content; margin-inline: auto;">
+                        <i class="fa fa-envelope pr-1"></i>Buka Undangan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cover End -->
 
 
     <!-- Navbar Start -->
