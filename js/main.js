@@ -31,19 +31,6 @@
     // Modal Video
     $(document).ready(function () {
         document.getElementsByClassName('song')[0].play();
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
-        });
-        console.log($videoSrc);
-
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
-
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
     });
 
 
@@ -86,8 +73,8 @@
 
     // Gallery carousel
     $(".gallery-carousel").owlCarousel({
-        autoplay: false,
-        smartSpeed: 1500,
+        autoplay: true,
+        smartSpeed: 1000,
         dots: false,
         loop: true,
         nav : true,
