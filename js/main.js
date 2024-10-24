@@ -30,6 +30,7 @@
 
     // Modal Video
     $(document).ready(function () {
+        document.getElementsByClassName('song')[0].play();
         var $videoSrc;
         $('.btn-play').click(function () {
             $videoSrc = $(this).data("src");
